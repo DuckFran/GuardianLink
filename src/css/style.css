@@ -1,0 +1,66 @@
+/* Custom GuardianLink Theme */
+
+:root {
+    --guardian-blue: #0d6efd;
+    --guardian-dark: #212529;
+}
+
+body {
+    background-color: #f4f7f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Ensure footer stays at the bottom */
+.container {
+    flex: 1;
+}
+
+/* Card Styling for Profiles and NGO Listings */
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Hero Section on Landing Page */
+.bg-light.border.rounded-3 {
+    background: linear-gradient(135deg, #ffffff 0%, #e9ecef 100%);
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Partnership Logos (Fake) Styling */
+.grayscale div {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 20px;
+}
+
+.grayscale div:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    color: var(--guardian-blue);
+}
+
+/* Profile Page Badge Styling */
+.badge {
+    padding: 0.5em 1em;
+    font-weight: 500;
+}
+
+/* Admin Dashboard Table */
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}

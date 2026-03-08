@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # The Web Server (GuardianLink UI)
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - guardian_net
+
+  # The Database
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: guardianlink_db
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: guardian_user
+      MYSQL_PASSWORD: secure_password
+    networks:
+      - guardian_net
+
+networks:
+  guardian_net:
+    driver: bridge
